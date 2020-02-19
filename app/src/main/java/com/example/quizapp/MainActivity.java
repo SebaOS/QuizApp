@@ -2,7 +2,9 @@ package com.example.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static int SPLASH_TIME_OUT = 4000;
     View logo;
     TextView startText;
     Animation quizAnimation, descriptionAnimation;
@@ -29,5 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         logo.setAnimation(quizAnimation);
         startText.setAnimation(descriptionAnimation);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, homeActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, SPLASH_TIME_OUT);
     }
 }

@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 3000;
     View logo;
     TextView startText;
-    Animation quizAnimation, descriptionAnimation;
+    Animation quizAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         quizAnimation = AnimationUtils.loadAnimation(this, R.anim.quiz_animation);
-        descriptionAnimation = AnimationUtils.loadAnimation(this, R.anim.description_animation);
 
         logo = findViewById(R.id.logo);
         startText = findViewById(R.id.startText);
 
         logo.setAnimation(quizAnimation);
-        startText.setAnimation(descriptionAnimation);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, homeActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    tools:context=".homeActivity">
+    android:padding="25dp"
+    tools:context=".HomeActivity">
 
-    <RelativeLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/logo" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quiz home window"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100sp" />
+    <Button
+        android:id="@+id/buttonStart"
+        android:layout_width="220dp"
+        android:layout_height="60dp"
+        android:text="Rozpocznij Quiz"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/custom_button"
+        android:layout_centerInParent="true" />
 
-    </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

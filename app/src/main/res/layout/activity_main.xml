@@ -3,25 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
+    android:padding="25dp"
     tools:context=".MainActivity">
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <View
+        <ImageView
             android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="200sp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="80sp"
-            android:background="@drawable/logo_quiz"
-            android:scaleX="2"
-            android:scaleY="2"
-            tools:ignore="InvalidId" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:src="@drawable/logo" />
 
     </RelativeLayout>
 

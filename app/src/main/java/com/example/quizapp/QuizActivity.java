@@ -37,6 +37,8 @@ public class QuizActivity extends AppCompatActivity {
     private int score;
     private boolean answered;
 
+    private long backPressedTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,9 +96,9 @@ public class QuizActivity extends AppCompatActivity {
             rb4.setText(currentQuestion.getOption4());
 
             questionCounter++;
-            textViewQuestionCount.setText("Question: " + questionCounter + "/" + questionCountTotal);
+            textViewQuestionCount.setText("Pytanie: " + questionCounter + " / " + questionCountTotal);
             answered = false;
-            buttonConfirmNext.setText("Confirm");
+            buttonConfirmNext.setText("Potwierdź");
         } else {
             finishQuiz();
         }
@@ -110,7 +112,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (answerNr == currentQuestion.getAnswerNr()) {
             score++;
-            textViewScore.setText("Score: " + score);
+            textViewScore.setText("Punkty: " + score);
         }
 
         showSolution();
@@ -125,30 +127,41 @@ public class QuizActivity extends AppCompatActivity {
         switch (currentQuestion.getAnswerNr()) {
             case 1:
                 rb1.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 1 is correct");
+                textViewQuestion.setText("Odpowiedź 1 jest prawidłowa");
                 break;
             case 2:
                 rb2.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 2 is correct");
+                textViewQuestion.setText("Odpowiedź 2 jest prawidłowa");
                 break;
             case 3:
                 rb3.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 3 is correct");
+                textViewQuestion.setText("Odpowiedź 3 jest prawidłowa");
                 break;
             case 4:
                 rb4.setTextColor(Color.GREEN);
-                textViewQuestion.setText("Answer 4 is correct");
+                textViewQuestion.setText("Odpowiedź 4 jest prawidłowa");
                 break;
         }
 
         if (questionCounter < questionCountTotal) {
-            buttonConfirmNext.setText("Next");
+            buttonConfirmNext.setText("Następne");
         } else {
-            buttonConfirmNext.setText("Finish");
+            buttonConfirmNext.setText("Koniec");
         }
     }
 
     private void finishQuiz() {
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressedTime + 3000 > System.currentTimeMillis()) {
+            finishQuiz();
+        } else {
+            Toast.makeText(this, "Naciśnij jeszcze raz by zakończyć", Toast.LENGTH_SHORT).show();
+        }
+
+        backPressedTime = System.currentTimeMillis();
     }
 }

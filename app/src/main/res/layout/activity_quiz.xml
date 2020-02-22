@@ -9,7 +9,7 @@
     tools:context=".QuizActivity">
 
     <TextView
-        android:id="@+id/textScore"
+        android:id="@+id/textViewScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Punkty: 0"
@@ -18,7 +18,7 @@
         android:layout_marginTop="15dp" />
 
     <TextView
-        android:id="@+id/textQuestionsCount"
+        android:id="@+id/textViewQuestionsCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pytanie 1 / x"
@@ -26,10 +26,10 @@
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:layout_below="@id/textScore"/>
+        android:layout_below="@id/textViewScore"/>
 
     <TextView
-        android:id="@+id/textTimeLeft"
+        android:id="@+id/textViewCountDown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0:30"
@@ -39,7 +39,7 @@
         android:layout_alignParentEnd="true"/>
 
     <TextView
-        android:id="@+id/textQuestionContent"
+        android:id="@+id/textViewQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Pytania będa pojawiać się w tym miejścu.\n Pytania będa pojawiać się w tym miejścu. "
@@ -48,7 +48,7 @@
         android:textAlignment="center"
         android:layout_marginTop="30dp"
         android:background="@drawable/custom_textview"
-        android:layout_below="@id/textQuestionsCount"
+        android:layout_below="@id/textViewQuestionsCount"
         android:textSize="20sp" />
 
     <RadioGroup
@@ -56,11 +56,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/textQuestionContent"
+        android:layout_below="@id/textViewQuestion"
         android:layout_centerVertical="true" >
 
         <RadioButton
-            android:id="@+id/firstAnswer"
+            android:id="@+id/radioButtonFirst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Pierwsza opcja"
@@ -68,7 +68,7 @@
             android:textColor="#FFFFFF" />
 
         <RadioButton
-            android:id="@+id/secondAnswer"
+            android:id="@+id/radioButtonSecond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Druga opcja"
@@ -76,7 +76,7 @@
             android:textColor="#FFFFFF" />
 
         <RadioButton
-            android:id="@+id/thirdAnswer"
+            android:id="@+id/radioButtonThird"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trzecia opcja"
@@ -84,7 +84,7 @@
             android:textColor="#FFFFFF" />
 
         <RadioButton
-            android:id="@+id/fourthAnswer"
+            android:id="@+id/radioButtonFourth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Czwarta opcja"

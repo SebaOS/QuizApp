@@ -24,8 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void startQuiz() {
-        Intent intent = new Intent(HomeActivity.this, QuizActivity.class);
-        startActivity(intent);
-        finish();
+                Intent intent = new Intent(HomeActivity.this, QuizActivity.class);
+                startActivity(intent);
     }
 }

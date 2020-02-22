@@ -24,5 +24,4 @@
         android:background="@drawable/custom_button"
         android:layout_centerInParent="true" />
 
-
 </RelativeLayout>

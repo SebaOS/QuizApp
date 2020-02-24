@@ -1,5 +1,7 @@
 package com.example.quizapp;
 
+
+
 public class Category {
 
     public static final int PROGRAMMING = 1;
@@ -30,5 +32,10 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }

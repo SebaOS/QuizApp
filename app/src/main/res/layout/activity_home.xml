@@ -24,4 +24,14 @@
         android:background="@drawable/custom_button"
         android:layout_centerInParent="true" />
 
+    <Spinner
+        android:id="@+id/spinnerCategories"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:textColor="#FFFFFF"
+        android:layout_alignStart="@+id/buttonStart"
+        android:layout_below="@+id/buttonStart"
+        android:layout_marginTop="10dp" />
+
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView textViewScore;
     private TextView textViewQuestionCount;
     private TextView textViewCountDown;
+    private TextView textViewCategory;
     private RadioGroup rbGroup;
     private RadioButton rb1;
     private RadioButton rb2;
@@ -57,6 +59,7 @@ public class QuizActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.textViewScore);
         textViewQuestionCount = findViewById(R.id.textViewQuestionsCount);
         textViewCountDown = findViewById(R.id.textViewCountDown);
+        textViewCategory = findViewById(R.id.textViewCategory);
         rbGroup = findViewById(R.id.radioGroup);
         rb1 = findViewById(R.id.radioButtonFirst);
         rb2 = findViewById(R.id.radioButtonSecond);
@@ -67,8 +70,14 @@ public class QuizActivity extends AppCompatActivity {
         textColorDefaultRb = rb1.getTextColors();
         textColorDefualtCd = textViewCountDown.getTextColors();
 
-        QuizDbHelper dbHelper = new QuizDbHelper(this);
-        questionList = dbHelper.getAllQuestions();
+        Intent intent = getIntent();
+        int categoryID = intent.getIntExtra(HomeActivity.EXTRA_CATEGORY_ID, 0);
+        String categoryName = intent.getStringExtra(HomeActivity.EXTRA_CATEGORY_NAME);
+
+        textViewCategory.setText("Kategoria: " + categoryName);
+
+        QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
+        questionList = dbHelper.getQuestions(categoryID);
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
 

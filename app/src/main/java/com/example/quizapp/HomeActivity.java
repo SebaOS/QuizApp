@@ -50,10 +50,10 @@ public class HomeActivity extends AppCompatActivity {
     private void loadCategories() {
         QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
         List<Category> categories = dbHelper.getAllCategories();
+        ArrayAdapter<Category> adapterCategories = new ArrayAdapter<>(
+                this, R.layout.custom_spinner, categories);
 
-        ArrayAdapter<Category> adapterCategories = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, categories);
-        adapterCategories.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapterCategories.setDropDownViewResource(R.layout.spinner_dropdown);
         spinnerCategory.setAdapter(adapterCategories);
     }
 }

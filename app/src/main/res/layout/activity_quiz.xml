@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="Kategoria: "
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:layout_below="@+id/textViewScore"/>
 
     <TextView
